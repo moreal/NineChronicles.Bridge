@@ -51,7 +51,7 @@ export async function processDownstreamEvents(
 
             const tipIndex = await downstreamGQLClient.getTipIndex();
 
-            if (nextBlockIndex >= tipIndex) {
+            if (nextBlockIndex + 1n >= tipIndex) {
                 console.debug(
                     "[sync][downstream] skip. nextBlockIndex / tipIndex",
                     nextBlockIndex,
