@@ -13,7 +13,5 @@ COPY --from=build-env /build/dist /app
 COPY --from=build-env /build/node_modules /app/node_modules
 COPY package.json /app
 
-RUN corepack enable
-
 WORKDIR /app
 ENTRYPOINT ["/usr/local/bin/node", "index.js"]
